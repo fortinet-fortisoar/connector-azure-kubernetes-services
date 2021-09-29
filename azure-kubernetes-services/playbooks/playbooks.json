@@ -1,0 +1,807 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "@type": "WorkflowCollection",
+      "name": "Sample - Azure Kubernetes Services - 1.0.0",
+      "description": "Sample playbooks for \"Azure Kubernetes Services\" connector. If you are planning to use any of the sample playbooks in your environment, ensure that you clone those playbooks and move them to a different collection, since the sample playbook collection gets deleted during connector upgrade and delete.",
+      "visible": true,
+      "image": "/api/3/images/444226ef-0733-48f6-b538-28cdac3c39c2",
+      "uuid": "afe510da-bb33-44df-83a6-c5a1010d6abe",
+      "id": 407,
+      "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+      "createDate": 1632729318,
+      "modifyUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+      "modifyDate": 1632729318,
+      "recordTags": [],
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Delete Managed Cluster",
+          "aliasName": null,
+          "tag": "#azure-kubernetes-services",
+          "description": "Deletes a specific managed cluster from Azure Kubernetes Services, based on the resource name and other input parameters you have specified.",
+          "isActive": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1631690013,
+          "collection": "/api/3/workflow_collections/afe510da-bb33-44df-83a6-c5a1010d6abe",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/1595096b-e625-4c2b-ac60-7d1633970fa7",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Delete Managed Cluster",
+              "description": null,
+              "arguments": {
+                "name": "Azure Kubernetes Services",
+                "config": "",
+                "params": {
+                  "resourceName": "clustername1",
+                  "subscriptionId": "6212c9c8-54a6-41ee-846b-37727030c040",
+                  "resourceGroupName": "fortinet-baner"
+                },
+                "version": "1.0.0",
+                "connector": "azure-kubernetes-services",
+                "operation": "delete_managed_cluster",
+                "operationTitle": "Delete Managed Cluster",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "14f853bf-2831-47ee-a9c3-d3a5b1725913",
+              "id": 12107
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "5c23461f-59be-4995-9cfa-4cc4c6dcb032",
+                "title": "Azure Kubernetes Services: Delete Managed Cluster",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "1595096b-e625-4c2b-ac60-7d1633970fa7",
+              "id": 12108
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Delete Managed Cluster",
+              "targetStep": "/api/3/workflow_steps/14f853bf-2831-47ee-a9c3-d3a5b1725913",
+              "sourceStep": "/api/3/workflow_steps/1595096b-e625-4c2b-ac60-7d1633970fa7",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "274935c7-6a0c-448f-b27d-1391d09e2276"
+            }
+          ],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "07f515e4-9909-4484-9c7f-0328631737ea",
+          "recordTags": [
+            "Microsoft",
+            "azure-kubernetes-services"
+          ],
+          "id": 4083,
+          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "createDate": 1632729318,
+          "modifyUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "modifyDate": 1632729318,
+          "owners": [],
+          "isPrivate": false
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Managed Cluster Actions",
+          "aliasName": null,
+          "tag": "#azure-kubernetes-services",
+          "description": "Performs actions such as start, stop, or rotate certificate on specified managed cluster on your Azure Kubernetes Services, based on the cluster action and other input parameters that you have specified.",
+          "isActive": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1631690128,
+          "collection": "/api/3/workflow_collections/afe510da-bb33-44df-83a6-c5a1010d6abe",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/c256902c-2b39-478f-a596-3090b767d9c3",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Managed Cluster Actions",
+              "description": null,
+              "arguments": {
+                "name": "Azure Kubernetes Services",
+                "config": "",
+                "params": {
+                  "action": "Start Managed Cluster",
+                  "resourceName": "clustername1",
+                  "subscriptionId": "6212c9c8-54a6-41ee-846b-37727030c040",
+                  "resourceGroupName": "fortinet-baner"
+                },
+                "version": "1.0.0",
+                "connector": "azure-kubernetes-services",
+                "operation": "managed_cluster_actions",
+                "operationTitle": "Managed Cluster Actions",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "9400e601-4827-4a85-b139-b63dac198b6e",
+              "id": 12109
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "611dcbe2-7451-479b-b047-e4e176fa2041",
+                "title": "Azure Kubernetes Services: Managed Cluster Actions",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "c256902c-2b39-478f-a596-3090b767d9c3",
+              "id": 12110
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Managed Cluster Actions",
+              "targetStep": "/api/3/workflow_steps/9400e601-4827-4a85-b139-b63dac198b6e",
+              "sourceStep": "/api/3/workflow_steps/c256902c-2b39-478f-a596-3090b767d9c3",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "6edee812-b9a6-4ed4-a929-df5349193c23"
+            }
+          ],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "1bd3086c-03b6-41ce-9253-8b05f866518c",
+          "recordTags": [
+            "Microsoft",
+            "azure-kubernetes-services"
+          ],
+          "id": 4084,
+          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "createDate": 1632729318,
+          "modifyUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "modifyDate": 1632729318,
+          "owners": [],
+          "isPrivate": false
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Managed Cluster",
+          "aliasName": null,
+          "tag": "#azure-kubernetes-services",
+          "description": "Retrieves information for a specific managed cluster from Azure Kubernetes Services, based on the resource name and other input parameters you have specified.",
+          "isActive": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1631689727,
+          "collection": "/api/3/workflow_collections/afe510da-bb33-44df-83a6-c5a1010d6abe",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/ed47e0a3-a9ac-461d-8f48-92960544c088",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Managed Cluster",
+              "description": null,
+              "arguments": {
+                "name": "Azure Kubernetes Services",
+                "config": "",
+                "params": {
+                  "resourceName": "clustername1",
+                  "subscriptionId": "6212c9c8-54a6-41ee-846b-37727030c040",
+                  "resourceGroupName": "fortinet-baner"
+                },
+                "version": "1.0.0",
+                "connector": "azure-kubernetes-services",
+                "operation": "get_managed_cluster",
+                "operationTitle": "Get Managed Cluster",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "b74ff663-2516-4dd4-b662-7e8cd9735eb5",
+              "id": 12111
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "f18551e7-6464-4b5d-baa8-f99277ad473f",
+                "title": "Azure Kubernetes Services: Get Managed Clusters",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "ed47e0a3-a9ac-461d-8f48-92960544c088",
+              "id": 12112
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Managed Cluster",
+              "targetStep": "/api/3/workflow_steps/b74ff663-2516-4dd4-b662-7e8cd9735eb5",
+              "sourceStep": "/api/3/workflow_steps/ed47e0a3-a9ac-461d-8f48-92960544c088",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "cd10726a-7f41-4e26-9929-d4e100aad5c7"
+            }
+          ],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "1d7f1635-51ff-4ac2-9fd5-53af62b9fe5b",
+          "recordTags": [
+            "Microsoft",
+            "azure-kubernetes-services"
+          ],
+          "id": 4085,
+          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "createDate": 1632729318,
+          "modifyUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "modifyDate": 1632729318,
+          "owners": [],
+          "isPrivate": false
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Run Command",
+          "aliasName": null,
+          "tag": "#azure-kubernetes-services",
+          "description": "Retrieves an information associated with a specific command from Azure Kubernetes Services based on the command and other input parameters that you have specified.",
+          "isActive": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1631690245,
+          "collection": "/api/3/workflow_collections/afe510da-bb33-44df-83a6-c5a1010d6abe",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/6ed6928c-a416-4bdd-b301-96a81f5d0be5",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Run Command",
+              "description": null,
+              "arguments": {
+                "name": "Azure Kubernetes Services",
+                "config": "",
+                "params": {
+                  "command": "kubectl apply -f ns.yaml",
+                  "resourceName": "clustername1",
+                  "subscriptionId": "6212c9c8-54a6-41ee-846b-37727030c040",
+                  "additional_fields": "",
+                  "resourceGroupName": "fortinet-baner"
+                },
+                "version": "1.0.0",
+                "connector": "azure-kubernetes-services",
+                "operation": "run_command",
+                "operationTitle": "Run Command",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "40692829-f579-49bc-873c-7eb1fc589973",
+              "id": 12113
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "e2810bbc-5bd0-4674-b802-46b4689005f4",
+                "title": "Azure Kubernetes Services: Run Command",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "6ed6928c-a416-4bdd-b301-96a81f5d0be5",
+              "id": 12114
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Run Command",
+              "targetStep": "/api/3/workflow_steps/40692829-f579-49bc-873c-7eb1fc589973",
+              "sourceStep": "/api/3/workflow_steps/6ed6928c-a416-4bdd-b301-96a81f5d0be5",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "a13e2d32-4617-494e-a9e3-23c920e6fd97"
+            }
+          ],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "3f166a45-96d9-431f-ab14-08b31af073d7",
+          "recordTags": [
+            "Microsoft",
+            "azure-kubernetes-services"
+          ],
+          "id": 4086,
+          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "createDate": 1632729318,
+          "modifyUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "modifyDate": 1632729318,
+          "owners": [],
+          "isPrivate": false
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Command Details",
+          "aliasName": null,
+          "tag": "#azure-kubernetes-services",
+          "description": "Retrieves information of a command which has been run on the managed cluster in Azure Kubernetes Services, based on the command ID and other input parameters you have specified.",
+          "isActive": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1631690534,
+          "collection": "/api/3/workflow_collections/afe510da-bb33-44df-83a6-c5a1010d6abe",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/0ba01f9a-f16a-486c-85b8-00b5e70eddaa",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "50c8af37-3df0-4a82-9dda-da9a30fef800",
+                "title": "Azure Kubernetes Services: Get Command Details",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "0ba01f9a-f16a-486c-85b8-00b5e70eddaa",
+              "id": 12115
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Command Details",
+              "description": null,
+              "arguments": {
+                "name": "Azure Kubernetes Services",
+                "config": "",
+                "params": {
+                  "commandId": "def7b3ea71bd4f7e9d226ddbc0f00ad9",
+                  "resourceName": "clustername1",
+                  "subscriptionId": "6212c9c8-54a6-41ee-846b-37727030c040",
+                  "resourceGroupName": "fortinet-baner"
+                },
+                "version": "1.0.0",
+                "connector": "azure-kubernetes-services",
+                "operation": "get_command_details",
+                "operationTitle": "Get Command Details",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "388fe85e-848d-4fe7-8a47-db1cdf6d1a14",
+              "id": 12116
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Command Details",
+              "targetStep": "/api/3/workflow_steps/388fe85e-848d-4fe7-8a47-db1cdf6d1a14",
+              "sourceStep": "/api/3/workflow_steps/0ba01f9a-f16a-486c-85b8-00b5e70eddaa",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "4e3612d3-5073-459b-bcb4-ab362d682aba"
+            }
+          ],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "666ee906-04da-4cb7-bbe3-0270b7727ecf",
+          "recordTags": [
+            "Microsoft",
+            "azure-kubernetes-services"
+          ],
+          "id": 4087,
+          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "createDate": 1632729318,
+          "modifyUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "modifyDate": 1632729318,
+          "owners": [],
+          "isPrivate": false
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Update Managed Cluster",
+          "aliasName": null,
+          "tag": "#azure-kubernetes-services",
+          "description": "Updates a existing managed cluster in Azure Kubernetes Services, based on the input parameters you have specified.",
+          "isActive": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1631689891,
+          "collection": "/api/3/workflow_collections/afe510da-bb33-44df-83a6-c5a1010d6abe",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/6d1bdf67-00ba-4fdd-bddd-13442f7dde0e",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Update Managed Cluster",
+              "description": null,
+              "arguments": {
+                "name": "Azure Kubernetes Services",
+                "config": "",
+                "params": {
+                  "location": "location1",
+                  "resourceName": "clustername1",
+                  "subscriptionId": "6212c9c8-54a6-41ee-846b-37727030c040",
+                  "additional_fields": "",
+                  "resourceGroupName": "fortinet-baner"
+                },
+                "version": "1.0.0",
+                "connector": "azure-kubernetes-services",
+                "operation": "update_managed_cluster",
+                "operationTitle": "Update Managed Cluster",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "5c1ba363-97bb-4a35-8996-c252e1d0d117",
+              "id": 12117
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "4dd0d76d-c05a-4703-9136-5206e6c181f6",
+                "title": "Azure Kubernetes Services: Update Managed Cluster",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "6d1bdf67-00ba-4fdd-bddd-13442f7dde0e",
+              "id": 12118
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Update Managed Cluster",
+              "targetStep": "/api/3/workflow_steps/5c1ba363-97bb-4a35-8996-c252e1d0d117",
+              "sourceStep": "/api/3/workflow_steps/6d1bdf67-00ba-4fdd-bddd-13442f7dde0e",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "723da03a-fd0e-4c81-9fb1-357460037045"
+            }
+          ],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "7a42adbf-8a63-4e39-92bd-9201ce982475",
+          "recordTags": [
+            "Microsoft",
+            "azure-kubernetes-services"
+          ],
+          "id": 4088,
+          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "createDate": 1632729318,
+          "modifyUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "modifyDate": 1632729318,
+          "owners": [],
+          "isPrivate": false
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Create Managed Cluster",
+          "aliasName": null,
+          "tag": "#azure-kubernetes-services",
+          "description": "Creates a managed cluster in Azure Kubernetes Services, based on the input parameters you have specified.",
+          "isActive": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1631689461,
+          "collection": "/api/3/workflow_collections/afe510da-bb33-44df-83a6-c5a1010d6abe",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/6f0e2fe7-feab-4800-bc2d-801c8645f1df",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "09ae58c6-e102-4e69-bf63-f770059f479b",
+                "title": "Azure Kubernetes Services: Create Managed Cluster",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "6f0e2fe7-feab-4800-bc2d-801c8645f1df",
+              "id": 12119
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Create Managed Cluster",
+              "description": null,
+              "arguments": {
+                "name": "Azure Kubernetes Services",
+                "config": "",
+                "params": {
+                  "location": "location1",
+                  "resourceName": "clustername1",
+                  "subscriptionId": "6212c9c8-54a6-41ee-846b-37727030c040",
+                  "additional_fields": "",
+                  "resourceGroupName": "fortinet-baner"
+                },
+                "version": "1.0.0",
+                "connector": "azure-kubernetes-services",
+                "operation": "create_managed_cluster",
+                "operationTitle": "Create Managed Cluster",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "d358101c-0dc9-4d9a-9f40-8189ddebe1fc",
+              "id": 12120
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Create Managed Cluster",
+              "targetStep": "/api/3/workflow_steps/d358101c-0dc9-4d9a-9f40-8189ddebe1fc",
+              "sourceStep": "/api/3/workflow_steps/6f0e2fe7-feab-4800-bc2d-801c8645f1df",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "664e42b9-cdec-4401-923e-87d1b0004e88"
+            }
+          ],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "a8462730-f271-42c1-9248-a38e98613d91",
+          "recordTags": [
+            "Microsoft",
+            "azure-kubernetes-services"
+          ],
+          "id": 4089,
+          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "createDate": 1632729318,
+          "modifyUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "modifyDate": 1632729318,
+          "owners": [],
+          "isPrivate": false
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "List Managed Clusters",
+          "aliasName": null,
+          "tag": "#azure-kubernetes-services",
+          "description": "Retrieves the list of managed clusters from Azure Kubernetes Services based on the subscription ID you have specified.",
+          "isActive": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1631689574,
+          "collection": "/api/3/workflow_collections/afe510da-bb33-44df-83a6-c5a1010d6abe",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/096341fb-a4d4-4b69-be23-5201032d7fea",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "0ca5746d-8d8a-4bc0-9d94-8ae313cb69aa",
+                "title": "Azure Kubernetes Services: List Managed Clusters",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "096341fb-a4d4-4b69-be23-5201032d7fea",
+              "id": 12121
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "List Managed Clusters",
+              "description": null,
+              "arguments": {
+                "name": "Azure Kubernetes Services",
+                "config": "",
+                "params": {
+                  "subscriptionId": "6212c9c8-54a6-41ee-846b-37727030c040"
+                },
+                "version": "1.0.0",
+                "connector": "azure-kubernetes-services",
+                "operation": "list_managed_clusters",
+                "operationTitle": "List Managed Clusters",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "92afa537-fac8-46e7-b9ae-c88dbb847037",
+              "id": 12122
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> List Managed Clusters",
+              "targetStep": "/api/3/workflow_steps/92afa537-fac8-46e7-b9ae-c88dbb847037",
+              "sourceStep": "/api/3/workflow_steps/096341fb-a4d4-4b69-be23-5201032d7fea",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "1e268299-3c8b-452c-8b37-4033f1e983e6"
+            }
+          ],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "acc6316c-5b35-4a5b-ada3-7c85e90912b8",
+          "recordTags": [
+            "Microsoft",
+            "azure-kubernetes-services"
+          ],
+          "id": 4090,
+          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "createDate": 1632729318,
+          "modifyUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "modifyDate": 1632729318,
+          "owners": [],
+          "isPrivate": false
+        }
+      ]
+    }
+  ],
+  "exported_tags": [
+    "Microsoft",
+    "azure-kubernetes-services"
+  ]
+}
