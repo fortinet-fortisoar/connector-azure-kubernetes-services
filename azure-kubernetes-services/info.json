@@ -1,0 +1,761 @@
+{
+  "description": "Deploy and manage containerized applications with a fully managed Kubernetes. This connector facilitates the automated operations related to managed cluster.",
+  "category": "IT Services",
+  "name": "azure-kubernetes-services",
+  "label": "Azure Kubernetes Services",
+  "version": "1.0.0",
+  "publisher": "Community",
+  "cs_approved": false,
+  "cs_compatible": true,
+  "icon_small_name": "small.png",
+  "icon_large_name": "large.png",
+  "help_online": "",
+  "configuration": {
+    "fields": [
+      {
+        "title": "Server URL",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "text",
+        "name": "resource",
+        "value": "https://graph.microsoft.com",
+        "description": "The service-based URI to which you will connect and perform the automated operations."
+      },
+      {
+        "title": "Client ID",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "text",
+        "name": "client_id",
+        "description": "Unique API ID of the Azure Active Directory application that is used to create an authentication token required to access the API."
+      },
+      {
+        "title": "Client Secret",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "password",
+        "name": "client_secret",
+        "description": "Unique API Secret of the Azure Active Directory application that is used to create an authentication token required to access the API. For information on how to get the secret key, see 'https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-atp/exposed-apis-create-app-webapp'."
+      },
+      {
+        "title": "Tenant ID",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "text",
+        "name": "tenant_id",
+        "description": "ID of the tenant that you have been provided for your Azure Active Directory instance."
+      },
+      {
+        "title": "Authorization Code",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "password",
+        "name": "code",
+        "tooltip": "Authorization code that you acquired in the authorization step.",
+        "description": "(Only Applicable to On behalf of User – Delegate Permission) The authorization code that you acquired during the authorization step. For more information, see the Getting Access Tokens using the Delegate Permissions method section."
+      },
+      {
+        "title": "Redirect URL",
+        "description": "The redirect_uri of your app, where authentication responses can be sent and received by your app. It must exactly match one of the redirect_uri's you registered in the app registration portal.",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "type": "text",
+        "name": "redirect_url",
+        "placeholder": "E.g. https://localhost/myapp",
+        "tooltip": "(Only Applicable to On behalf of User – Delegate Permission) The redirect_uri of your app, where authentication responses can be sent and received by your app. The redirect URL that you specify here must exactly match one of the redirect_uri's you have registered in your app registration portal."
+      },
+      {
+        "title": "Verify SSL",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "type": "checkbox",
+        "name": "verify_ssl",
+        "value": true,
+        "description": "Specifies whether the SSL certificate for the server is to be verified or not. By default, this option is set as True."
+      }
+    ]
+  },
+  "operations": [
+    {
+      "title": "Create Managed Cluster",
+      "operation": "create_managed_cluster",
+      "description": "Creates a managed cluster in Azure Kubernetes Services, based on the input parameters you have specified.",
+      "category": "investigation",
+      "annotation": "create_managed_cluster",
+      "parameters": [
+        {
+          "title": "Workspace Resource Group",
+          "description": "Azure active directory resource group from which you want to creates a managed cluster in Azure Kubernetes Services.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "resourceGroupName"
+        },
+        {
+          "title": "Workspace Subscription ID",
+          "description": "Azure active directory subscription ID from which you want to create a managed cluster in Azure Kubernetes Services.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "subscriptionId"
+        },
+        {
+          "title": "Resource Name",
+          "description": "Name of the managed cluster resource from which you want to create a managed cluster in Azure Kubernetes Services.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "resourceName",
+          "tooltip": "Name of the managed cluster resource."
+        },
+        {
+          "title": "Resource Location",
+          "description": "Location of the resource from which you want to create a managed cluster in Azure Kubernetes Services.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "location"
+        },
+        {
+          "title": "Additional Fields",
+          "name": "additional_fields",
+          "type": "json",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "tooltip": "(Optional) Additional fields that you want to create managed cluster in Azure Kubernetes Services.",
+          "description": "(Optional) Additional fields that you want to create managed cluster in Azure Kubernetes Services."
+        }
+      ],
+      "output_schema": {
+        "id": "",
+        "location": "",
+        "name": "",
+        "tags": {
+        },
+        "type": "",
+        "properties": {
+          "provisioningState": "",
+          "maxAgentPools": "",
+          "kubernetesVersion": "",
+          "dnsPrefix": "",
+          "agentPoolProfiles": [
+            {
+              "name": "",
+              "count": "",
+              "vmSize": "",
+              "maxPods": "",
+              "osType": "",
+              "provisioningState": "",
+              "orchestratorVersion": "",
+              "type": "",
+              "enableNodePublicIP": "",
+              "mode": "",
+              "nodeImageVersion": "",
+              "enableEncryptionAtHost": ""
+            }
+          ],
+          "linuxProfile": {
+            "adminUsername": "",
+            "ssh": {
+              "publicKeys": [
+              ]
+            }
+          },
+          "windowsProfile": {
+            "adminUsername": ""
+          },
+          "servicePrincipalProfile": {
+            "clientId": ""
+          },
+          "addonProfiles": {
+            "azureKeyvaultSecretsProvider": {
+              "enabled": "",
+              "config": {
+                "enableSecretRotation": ""
+              }
+            }
+          },
+          "nodeResourceGroup": "",
+          "enableRBAC": "",
+          "diskEncryptionSetID": "",
+          "enablePodSecurityPolicy": "",
+          "fqdn": "",
+          "networkProfile": {
+            "loadBalancerSku": "",
+            "networkPlugin": "",
+            "podCidr": "",
+            "serviceCidr": "",
+            "dnsServiceIP": "",
+            "dockerBridgeCidr": "",
+            "outboundType": "",
+            "loadBalancerProfile": {
+              "allocatedOutboundPorts": "",
+              "idleTimeoutInMinutes": "",
+              "managedOutboundIPs": {
+                "count": ""
+              },
+              "effectiveOutboundIPs": [
+                {
+                  "id": ""
+                }
+              ]
+            }
+          },
+          "autoScalerProfile": {
+            "scan-interval": "",
+            "scale-down-delay-after-add": ""
+          }
+        }
+      },
+      "enabled": true
+    },
+    {
+      "title": "List Managed Clusters",
+      "operation": "list_managed_clusters",
+      "description": "Retrieves the list of managed clusters from Azure Kubernetes Services based on the subscription ID you have specified.",
+      "category": "investigation ",
+      "annotation": "list_managed_clusters",
+      "parameters": [
+        {
+          "title": "Workspace Subscription ID",
+          "description": "Azure active directory subscription ID from which you want to retrieve the managed clusters from Azure Kubernetes Services.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "subscriptionId"
+        }
+      ],
+      "output_schema": {
+        "value": [
+          {
+            "id": "",
+            "location": "",
+            "name": "",
+            "tags": {
+            },
+            "type": "",
+            "properties": {
+              "provisioningState": "",
+              "kubernetesVersion": "",
+              "maxAgentPools": "",
+              "dnsPrefix": "",
+              "fqdn": "",
+              "agentPoolProfiles": [
+                {
+                  "name": "",
+                  "count": "",
+                  "vmSize": "",
+                  "maxPods": "",
+                  "osType": "",
+                  "provisioningState": "",
+                  "orchestratorVersion": ""
+                }
+              ],
+              "linuxProfile": {
+                "adminUsername": "",
+                "ssh": {
+                  "publicKeys": [
+                  ]
+                }
+              },
+              "servicePrincipalProfile": {
+                "clientId": ""
+              },
+              "nodeResourceGroup": "",
+              "enableRBAC": "",
+              "diskEncryptionSetID": "",
+              "networkProfile": {
+                "networkPlugin": "",
+                "podCidr": "",
+                "serviceCidr": "",
+                "dnsServiceIP": "",
+                "dockerBridgeCidr": ""
+              }
+            }
+          }
+        ]
+      },
+      "enabled": true
+    },
+    {
+      "title": "Get Managed Cluster",
+      "operation": "get_managed_cluster",
+      "description": "Retrieves information for a specific managed cluster from Azure Kubernetes Services, based on the resource name and other input parameters you have specified.",
+      "category": "investigation",
+      "annotation": "get_managed_cluster",
+      "parameters": [
+        {
+          "title": "Workspace Resource Group",
+          "description": "Azure active directory resource group from which you want to retrieve the managed cluster from Azure Kubernetes Services.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "resourceGroupName"
+        },
+        {
+          "title": "Workspace Subscription ID",
+          "description": "Azure active directory subscription ID from which you want to retrieve the managed cluster from Azure Kubernetes Services.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "subscriptionId"
+        },
+        {
+          "title": "Resource Name",
+          "description": "Name of the managed cluster resource from which you want to retrieve the managed cluster from Azure Kubernetes Services.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "resourceName",
+          "tooltip": "Name of the managed cluster resource"
+        }
+      ],
+      "output_schema": {
+        "id": "",
+        "location": "",
+        "name": "",
+        "tags": {
+        },
+        "type": "",
+        "properties": {
+          "provisioningState": "",
+          "maxAgentPools": "",
+          "kubernetesVersion": "",
+          "dnsPrefix": "",
+          "fqdn": "",
+          "azurePortalFQDN": "",
+          "agentPoolProfiles": [
+            {
+              "name": "",
+              "count": "",
+              "vmSize": "",
+              "maxPods": "",
+              "osType": "",
+              "provisioningState": "",
+              "orchestratorVersion": "",
+              "availabilityZones": [
+              ],
+              "nodeImageVersion": "",
+              "upgradeSettings": {
+                "maxSurge": ""
+              }
+            }
+          ],
+          "linuxProfile": {
+            "adminUsername": "",
+            "ssh": {
+              "publicKeys": [
+              ]
+            }
+          },
+          "servicePrincipalProfile": {
+            "clientId": ""
+          },
+          "nodeResourceGroup": "",
+          "enableRBAC": "",
+          "diskEncryptionSetID": "",
+          "networkProfile": {
+            "networkPlugin": "",
+            "podCidr": "",
+            "serviceCidr": "",
+            "dnsServiceIP": "",
+            "dockerBridgeCidr": "",
+            "loadBalancerSku": "",
+            "outboundType": "",
+            "loadBalancerProfile": {
+              "allocatedOutboundPorts": "",
+              "idleTimeoutInMinutes": "",
+              "outboundIPs": {
+                "publicIPs": [
+                  {
+                    "id": ""
+                  }
+                ]
+              },
+              "effectiveOutboundIPs": [
+                {
+                  "id": ""
+                }
+              ]
+            }
+          }
+        }
+      },
+      "enabled": true
+    },
+    {
+      "title": "Update Managed Cluster",
+      "operation": "update_managed_cluster",
+      "description": "Updates a existing managed cluster in Azure Kubernetes Services, based on the input parameters you have specified.",
+      "category": "investigation",
+      "annotation": "update_managed_cluster",
+      "parameters": [
+        {
+          "title": "Workspace Resource Group",
+          "description": "Azure active directory resource group from which you want to update a managed cluster in Azure Kubernetes Services.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "resourceGroupName"
+        },
+        {
+          "title": "Workspace Subscription ID",
+          "description": "Azure active directory subscription ID from which you want to update a managed cluster in Azure Kubernetes Services.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "subscriptionId"
+        },
+        {
+          "title": "Resource Name",
+          "description": "Name of the managed cluster resource from which you want to update a managed cluster in Azure Kubernetes Services.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "resourceName",
+          "tooltip": "Name of the managed cluster resource"
+        },
+        {
+          "title": "Resource Location",
+          "description": "Location of the resource from which you want to update a managed cluster in Azure Kubernetes Services.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "location"
+        },
+        {
+          "title": "Additional Fields",
+          "name": "additional_fields",
+          "type": "json",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "tooltip": "(Optional) Additional fields that you want to update a managed cluster in Azure Kubernetes Services.",
+          "description": "(Optional) Additional fields that you want to update a managed cluster in Azure Kubernetes Services."
+        }
+      ],
+      "output_schema": {
+        "id": "",
+        "location": "",
+        "name": "",
+        "tags": {
+        },
+        "type": "",
+        "properties": {
+          "provisioningState": "",
+          "maxAgentPools": "",
+          "kubernetesVersion": "",
+          "dnsPrefix": "",
+          "agentPoolProfiles": [
+            {
+              "name": "",
+              "count": "",
+              "vmSize": "",
+              "maxPods": "",
+              "osType": "",
+              "provisioningState": "",
+              "orchestratorVersion": "",
+              "type": "",
+              "enableNodePublicIP": "",
+              "mode": "",
+              "nodeImageVersion": "",
+              "enableEncryptionAtHost": ""
+            }
+          ],
+          "linuxProfile": {
+            "adminUsername": "",
+            "ssh": {
+              "publicKeys": [
+              ]
+            }
+          },
+          "windowsProfile": {
+            "adminUsername": ""
+          },
+          "servicePrincipalProfile": {
+            "clientId": ""
+          },
+          "addonProfiles": {
+            "azureKeyvaultSecretsProvider": {
+              "enabled": "",
+              "config": {
+                "enableSecretRotation": ""
+              }
+            }
+          },
+          "nodeResourceGroup": "",
+          "enableRBAC": "",
+          "diskEncryptionSetID": "",
+          "enablePodSecurityPolicy": "",
+          "fqdn": "",
+          "networkProfile": {
+            "loadBalancerSku": "",
+            "networkPlugin": "",
+            "podCidr": "",
+            "serviceCidr": "",
+            "dnsServiceIP": "",
+            "dockerBridgeCidr": "",
+            "outboundType": "",
+            "loadBalancerProfile": {
+              "allocatedOutboundPorts": "",
+              "idleTimeoutInMinutes": "",
+              "managedOutboundIPs": {
+                "count": ""
+              },
+              "effectiveOutboundIPs": [
+                {
+                  "id": ""
+                }
+              ]
+            }
+          },
+          "autoScalerProfile": {
+            "scan-interval": "",
+            "scale-down-delay-after-add": ""
+          }
+        }
+      },
+      "enabled": true
+    },
+    {
+      "title": "Delete Managed Cluster",
+      "operation": "delete_managed_cluster",
+      "description": "Deletes a specific managed cluster from Azure Kubernetes Services, based on the resource name and other input parameters you have specified.",
+      "category": "investigation",
+      "annotation": "delete_managed_cluster",
+      "parameters": [
+        {
+          "title": "Workspace Resource Group",
+          "description": "Azure active directory resource group from which you want to delete the managed cluster from Azure Kubernetes Services.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "resourceGroupName"
+        },
+        {
+          "title": "Workspace Subscription ID",
+          "description": "Azure active directory subscription ID from which you want to delete the managed cluster from Azure Kubernetes Services.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "subscriptionId"
+        },
+        {
+          "title": "Resource Name",
+          "description": "Name of the managed cluster resource from which you want to delete the managed cluster from Azure Kubernetes Services.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "resourceName",
+          "tooltip": "Name of the managed cluster resource"
+        }
+      ],
+      "output_schema": {
+        "result": ""
+      },
+      "enabled": true
+    },
+    {
+      "title": "Managed Cluster Actions",
+      "operation": "managed_cluster_actions",
+      "description": "Performs actions such as start, stop, or rotate certificate on specified managed cluster on your Azure Kubernetes Services, based on the cluster action and other input parameters that you have specified.",
+      "category": "investigation",
+      "annotation": "managed_cluster_actions",
+      "parameters": [
+        {
+          "title": "Action to Process the cluster",
+          "description": "Select the action that you want to perform on the specified managed cluster on the Azure Kubernetes Services. You can choose from the following options: Start Managed Cluster, Stop Managed Cluster, or Rotate Cluster Certificates.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "name": "action",
+          "options": [
+            "Start Managed Cluster",
+            "Stop Managed Cluster",
+            "Rotate Cluster Certificates"
+          ]
+        },
+        {
+          "title": "Workspace Resource Group",
+          "description": "Azure active directory resource group from which you want to perform action on the managed cluster in Azure Kubernetes Services.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "resourceGroupName"
+        },
+        {
+          "title": "Workspace Subscription ID",
+          "description": "Azure active directory subscription ID from which you want to perform action on the managed cluster in Azure Kubernetes Services.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "subscriptionId"
+        },
+        {
+          "title": "Resource Name",
+          "description": "Name of the managed cluster resource from which you want to perform action on the managed cluster in Azure Kubernetes Services.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "resourceName",
+          "tooltip": "Name of the managed cluster resource"
+        }
+      ],
+      "output_schema": {
+        "result": ""
+      },
+      "enabled": true
+    },
+    {
+      "title": "Run Command",
+      "operation": "run_command",
+      "description": "Retrieves an information associated with a specific command from Azure Kubernetes Services based on the command and other input parameters that you have specified.",
+      "category": "investigation",
+      "annotation": "run_command",
+      "parameters": [
+        {
+          "title": "Workspace Resource Group",
+          "description": "Azure active directory resource group from which you want to retrieve details from Azure Kubernetes Services.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "resourceGroupName"
+        },
+        {
+          "title": "Workspace Subscription ID",
+          "description": "Azure active directory subscription ID from which you want to retrieve details from Azure Kubernetes Services.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "subscriptionId"
+        },
+        {
+          "title": "Resource Name",
+          "description": "Name of the resource from which you want to retrieve details from Azure Kubernetes Services.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "resourceName",
+          "tooltip": "Name of the managed cluster resource"
+        },
+        {
+          "title": "Command",
+          "description": "Command based on which you want to retrieve details from Azure Kubernetes Services.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "command",
+          "placeholder": "kubectl apply -f ns.yaml",
+          "tooltip": "Command based on which you want to retrieve details from Azure Kubernetes Services."
+        },
+        {
+          "title": "Additional Fields",
+          "name": "additional_fields",
+          "type": "json",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "tooltip": "(Optional) Additional fields that you want to retrieve details from Azure Kubernetes Services.",
+          "description": "(Optional) Additional fields that you want to retrieve details from Azure Kubernetes Services."
+        }
+      ],
+      "output_schema": {
+        "id": "",
+        "properties": {
+          "provisioningState": "",
+          "exitCode": "",
+          "startedAt": "",
+          "finishedAt": "",
+          "logs": ""
+        }
+      },
+      "enabled": true
+    },
+    {
+      "title": "Get Command Details",
+      "operation": "get_command_details",
+      "description": "Retrieves information of a command which has been run on the managed cluster in Azure Kubernetes Services, based on the command ID and other input parameters you have specified.",
+      "category": "investigation",
+      "annotation": "get_command_details",
+      "parameters": [
+        {
+          "title": "Command ID",
+          "description": "ID of the command that you want to retrieve details from Azure Kubernetes Services.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "commandId"
+        },
+        {
+          "title": "Workspace Resource Group",
+          "description": "Azure active directory resource group from which you want to retrieve details from Azure Kubernetes Services.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "resourceGroupName"
+        },
+        {
+          "title": "Workspace Subscription ID",
+          "description": "Azure active directory subscription ID from which you want to retrieve details from Azure Kubernetes Services.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "subscriptionId"
+        },
+        {
+          "title": "Resource Name",
+          "description": "Name of the resource from which you want to retrieve details from Azure Kubernetes Services.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "resourceName",
+          "tooltip": "Name of the managed cluster resource"
+        }
+      ],
+      "output_schema": {
+        "id": "",
+        "properties": {
+          "provisioningState": "",
+          "reason": ""
+        }
+      },
+      "enabled": true
+    }
+  ]
+}
+
