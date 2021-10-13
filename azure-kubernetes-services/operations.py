@@ -75,7 +75,7 @@ def check_payload(payload):
     return final_payload
 
 
-def list_managed_clusters(config, params, connector_info):
+def get_managed_clusters_list(config, params, connector_info):
     try:
         endpoint = kubernetes_api_endpoint + '/subscriptions/{0}/providers/Microsoft.ContainerService/managedClusters?api-version=2021-05-01'.format(
             params.get('subscriptionId'))
@@ -151,7 +151,8 @@ def delete_managed_cluster(config, params, connector_info):
 def managed_cluster_actions(config, params, connector_info):
     try:
         endpoint = kubernetes_api_endpoint + '/subscriptions/{0}/resourceGroups/{1}/providers/Microsoft.ContainerService/managedClusters/{2}/{3}?api-version=2021-05-01'.format(
-            params.get('subscriptionId'), params.get('resourceGroupName'), params.get('resourceName'), managed_cluster_action.get(params.get('action')))
+            params.get('subscriptionId'), params.get('resourceGroupName'), params.get('resourceName'),
+            managed_cluster_action.get(params.get('action')))
         response = api_request("POST", endpoint, connector_info, config)
         return {'result': 'Successfully {0}'.format(params.get('action'))}
     except Exception as err:
@@ -181,7 +182,8 @@ def run_command(config, params, connector_info):
 def get_command_details(config, params, connector_info):
     try:
         endpoint = kubernetes_api_endpoint + '/subscriptions/{0}/resourceGroups/{1}/providers/Microsoft.ContainerService/managedClusters/{2}/commandResults/{3}?api-version=2021-05-01'.format(
-            params.get('subscriptionId'), params.get('resourceGroupName'), params.get('resourceName'), params.get('commandId'))
+            params.get('subscriptionId'), params.get('resourceGroupName'), params.get('resourceName'),
+            params.get('commandId'))
         response = api_request("GET", endpoint, connector_info, config)
         return response
     except Exception as err:
@@ -199,7 +201,7 @@ def _check_health(config, connector_info):
 
 operations = {
     'create_managed_cluster': create_managed_cluster,
-    'list_managed_clusters': list_managed_clusters,
+    'get_managed_clusters_list': get_managed_clusters_list,
     'get_managed_cluster': get_managed_cluster,
     'update_managed_cluster': update_managed_cluster,
     'delete_managed_cluster': delete_managed_cluster,
