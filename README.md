@@ -4,7 +4,7 @@ Deploy and manage containerized applications with a fully managed Kubernetes. Th
 
 ## API Documentation Link:  https://docs.microsoft.com/en-us/rest/api/aks/
 
-## Azure Storage API Version: 2021-05-01
+## Azure Kubernetes Services Version: 2021-05-01
 
 # Accessing the Azure Kubernetes Services API
 
