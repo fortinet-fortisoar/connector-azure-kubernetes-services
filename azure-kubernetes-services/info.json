@@ -9,7 +9,7 @@
   "cs_compatible": true,
   "icon_small_name": "small.png",
   "icon_large_name": "large.png",
-  "help_online": "",
+  "help_online": "https://docs.fortinet.com/document/fortisoar/1.0.0/azure-kubernetes-services/174/azure-kubernetes-services-v1-0-0",
   "configuration": {
     "fields": [
       {
@@ -29,7 +29,7 @@
         "visible": true,
         "type": "text",
         "name": "client_id",
-        "description": "Unique API ID of the Azure Active Directory application that is used to create an authentication token required to access the API."
+        "description": "Unique API ID of the Azure AD application that is used to create an authentication token required to access the API."
       },
       {
         "title": "Client Secret",
@@ -38,7 +38,7 @@
         "visible": true,
         "type": "password",
         "name": "client_secret",
-        "description": "Unique API Secret of the Azure Active Directory application that is used to create an authentication token required to access the API. For information on how to get the secret key, see 'https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-atp/exposed-apis-create-app-webapp'."
+        "description": "Unique API Secret of the Azure AD application that is used to create an authentication token required to access the API."
       },
       {
         "title": "Tenant ID",
@@ -47,7 +47,7 @@
         "visible": true,
         "type": "text",
         "name": "tenant_id",
-        "description": "ID of the tenant that you have been provided for your Azure Active Directory instance."
+        "description": "ID of the tenant that you have been provided for your Azure AD instance."
       },
       {
         "title": "Authorization Code",
@@ -56,19 +56,19 @@
         "visible": true,
         "type": "password",
         "name": "code",
-        "tooltip": "Authorization code that you acquired in the authorization step.",
-        "description": "(Only Applicable to On behalf of User – Delegate Permission) The authorization code that you acquired during the authorization step. For more information, see the Getting Access Tokens using the Delegate Permissions method section."
+        "tooltip": "The authorization code that you acquired during the authorization step. For more information, see Accessing the Azure Kubernetes Service API.",
+        "description": "The authorization code that you acquired during the authorization step. For more information, see Accessing the Azure Kubernetes Service API."
       },
       {
         "title": "Redirect URL",
-        "description": "The redirect_uri of your app, where authentication responses can be sent and received by your app. It must exactly match one of the redirect_uri's you registered in the app registration portal.",
+        "description": "The redirect_uri of your app, where authentication responses can be sent and received by your app. It must exactly match one of the redirect_uri you registered in the app registration portal.",
         "required": false,
         "editable": true,
         "visible": true,
         "type": "text",
         "name": "redirect_url",
         "placeholder": "E.g. https://localhost/myapp",
-        "tooltip": "(Only Applicable to On behalf of User – Delegate Permission) The redirect_uri of your app, where authentication responses can be sent and received by your app. The redirect URL that you specify here must exactly match one of the redirect_uri's you have registered in your app registration portal."
+        "tooltip": "The redirect_uri of your app, where authentication responses can be sent and received by your app. It must exactly match one of the redirect_uri you registered in the app registration portal."
       },
       {
         "title": "Verify SSL",
@@ -78,7 +78,7 @@
         "type": "checkbox",
         "name": "verify_ssl",
         "value": true,
-        "description": "Specifies whether the SSL certificate for the server is to be verified or not. By default, this option is set as True."
+        "description": "Specifies whether the SSL certificate for the server is to be verified or not.\nBy default, this option is set as True."
       }
     ]
   },
@@ -92,7 +92,7 @@
       "parameters": [
         {
           "title": "Workspace Resource Group",
-          "description": "Azure active directory resource group from which you want to creates a managed cluster in Azure Kubernetes Services.",
+          "description": "Azure AD resource group from which you want to creates a managed cluster in Azure Kubernetes Services.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -101,7 +101,7 @@
         },
         {
           "title": "Workspace Subscription ID",
-          "description": "Azure active directory subscription ID from which you want to create a managed cluster in Azure Kubernetes Services.",
+          "description": "Azure AD subscription ID from which you want to create a managed cluster in Azure Kubernetes Services.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -116,7 +116,7 @@
           "visible": true,
           "type": "text",
           "name": "resourceName",
-          "tooltip": "Name of the managed cluster resource."
+          "tooltip": "Name of the managed cluster resource from which you want to create a managed cluster in Azure Kubernetes Services."
         },
         {
           "title": "Resource Location",
@@ -222,15 +222,15 @@
       "enabled": true
     },
     {
-      "title": "List Managed Clusters",
-      "operation": "list_managed_clusters",
+      "title": "Get Managed Clusters List",
+      "operation": "get_managed_clusters_list",
       "description": "Retrieves the list of managed clusters from Azure Kubernetes Services based on the subscription ID you have specified.",
       "category": "investigation ",
-      "annotation": "list_managed_clusters",
+      "annotation": "get_managed_clusters_list",
       "parameters": [
         {
           "title": "Workspace Subscription ID",
-          "description": "Azure active directory subscription ID from which you want to retrieve the managed clusters from Azure Kubernetes Services.",
+          "description": "Azure AD subscription ID from which you want to retrieve the managed clusters from Azure Kubernetes Services.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -299,7 +299,7 @@
       "parameters": [
         {
           "title": "Workspace Resource Group",
-          "description": "Azure active directory resource group from which you want to retrieve the managed cluster from Azure Kubernetes Services.",
+          "description": "Azure AD resource group from which you want to retrieve the managed cluster from Azure Kubernetes Services.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -308,7 +308,7 @@
         },
         {
           "title": "Workspace Subscription ID",
-          "description": "Azure active directory subscription ID from which you want to retrieve the managed cluster from Azure Kubernetes Services.",
+          "description": "Azure AD subscription ID from which you want to retrieve the managed cluster from Azure Kubernetes Services.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -323,7 +323,7 @@
           "visible": true,
           "type": "text",
           "name": "resourceName",
-          "tooltip": "Name of the managed cluster resource"
+          "tooltip": "Name of the managed cluster resource from which you want to retrieve the managed cluster from Azure Kubernetes Services."
         }
       ],
       "output_schema": {
@@ -408,7 +408,7 @@
       "parameters": [
         {
           "title": "Workspace Resource Group",
-          "description": "Azure active directory resource group from which you want to update a managed cluster in Azure Kubernetes Services.",
+          "description": "Azure AD resource group from which you want to update a managed cluster in Azure Kubernetes Services.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -417,7 +417,7 @@
         },
         {
           "title": "Workspace Subscription ID",
-          "description": "Azure active directory subscription ID from which you want to update a managed cluster in Azure Kubernetes Services.",
+          "description": "Azure AD subscription ID from which you want to update a managed cluster in Azure Kubernetes Services.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -432,7 +432,7 @@
           "visible": true,
           "type": "text",
           "name": "resourceName",
-          "tooltip": "Name of the managed cluster resource"
+          "tooltip": "Name of the managed cluster resource from which you want to update a managed cluster in Azure Kubernetes Services."
         },
         {
           "title": "Resource Location",
@@ -546,7 +546,7 @@
       "parameters": [
         {
           "title": "Workspace Resource Group",
-          "description": "Azure active directory resource group from which you want to delete the managed cluster from Azure Kubernetes Services.",
+          "description": "Azure AD resource group from which you want to delete the managed cluster from Azure Kubernetes Services.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -555,7 +555,7 @@
         },
         {
           "title": "Workspace Subscription ID",
-          "description": "Azure active directory subscription ID from which you want to delete the managed cluster from Azure Kubernetes Services.",
+          "description": "Azure AD subscription ID from which you want to delete the managed cluster from Azure Kubernetes Services.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -570,7 +570,7 @@
           "visible": true,
           "type": "text",
           "name": "resourceName",
-          "tooltip": "Name of the managed cluster resource"
+          "tooltip": "Name of the managed cluster resource from which you want to delete the managed cluster from Azure Kubernetes Services."
         }
       ],
       "output_schema": {
@@ -597,11 +597,12 @@
             "Start Managed Cluster",
             "Stop Managed Cluster",
             "Rotate Cluster Certificates"
-          ]
+          ],
+          "tooltip": "Select the action that you want to perform on the specified managed cluster on the Azure Kubernetes Services. You can choose from the following options: Start Managed Cluster, Stop Managed Cluster, or Rotate Cluster Certificates."
         },
         {
           "title": "Workspace Resource Group",
-          "description": "Azure active directory resource group from which you want to perform action on the managed cluster in Azure Kubernetes Services.",
+          "description": "Azure AD resource group from which you want to perform an action on the managed cluster in Azure Kubernetes Services.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -610,7 +611,7 @@
         },
         {
           "title": "Workspace Subscription ID",
-          "description": "Azure active directory subscription ID from which you want to perform action on the managed cluster in Azure Kubernetes Services.",
+          "description": "Azure AD subscription ID from which you want to perform an action on the managed cluster in Azure Kubernetes Services.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -625,7 +626,7 @@
           "visible": true,
           "type": "text",
           "name": "resourceName",
-          "tooltip": "Name of the managed cluster resource"
+          "tooltip": "Name of the managed cluster resource from which you want to perform action on the managed cluster in Azure Kubernetes Services."
         }
       ],
       "output_schema": {
@@ -642,7 +643,7 @@
       "parameters": [
         {
           "title": "Workspace Resource Group",
-          "description": "Azure active directory resource group from which you want to retrieve details from Azure Kubernetes Services.",
+          "description": "Azure AD resource group from which you want to retrieve details from Azure Kubernetes Services.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -651,7 +652,7 @@
         },
         {
           "title": "Workspace Subscription ID",
-          "description": "Azure active directory subscription ID from which you want to retrieve details from Azure Kubernetes Services.",
+          "description": "Azure AD subscription ID from which you want to retrieve details from Azure Kubernetes Services.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -666,7 +667,7 @@
           "visible": true,
           "type": "text",
           "name": "resourceName",
-          "tooltip": "Name of the managed cluster resource"
+          "tooltip": "Name of the resource from which you want to retrieve details from Azure Kubernetes Services."
         },
         {
           "title": "Command",
@@ -720,7 +721,7 @@
         },
         {
           "title": "Workspace Resource Group",
-          "description": "Azure active directory resource group from which you want to retrieve details from Azure Kubernetes Services.",
+          "description": "Azure AD resource group from which you want to retrieve details from Azure Kubernetes Services.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -729,7 +730,7 @@
         },
         {
           "title": "Workspace Subscription ID",
-          "description": "Azure active directory subscription ID from which you want to retrieve details from Azure Kubernetes Services.",
+          "description": "Azure AD subscription ID from which you want to retrieve details from Azure Kubernetes Services.",
           "required": true,
           "editable": true,
           "visible": true,
@@ -744,7 +745,7 @@
           "visible": true,
           "type": "text",
           "name": "resourceName",
-          "tooltip": "Name of the managed cluster resource"
+          "tooltip": "Name of the resource from which you want to retrieve details from Azure Kubernetes Services."
         }
       ],
       "output_schema": {

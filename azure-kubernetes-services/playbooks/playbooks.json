@@ -6,13 +6,13 @@
       "name": "Sample - Azure Kubernetes Services - 1.0.0",
       "description": "Sample playbooks for \"Azure Kubernetes Services\" connector. If you are planning to use any of the sample playbooks in your environment, ensure that you clone those playbooks and move them to a different collection, since the sample playbook collection gets deleted during connector upgrade and delete.",
       "visible": true,
-      "image": "/api/3/images/444226ef-0733-48f6-b538-28cdac3c39c2",
+      "image": "/api/3/images/555ed52b-f537-4620-9fab-94b189fd2979",
       "uuid": "afe510da-bb33-44df-83a6-c5a1010d6abe",
-      "id": 407,
+      "id": 507,
       "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
-      "createDate": 1632729318,
+      "createDate": 1634109491,
       "modifyUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
-      "modifyDate": 1632729318,
+      "modifyDate": 1634109491,
       "recordTags": [],
       "workflows": [
         {
@@ -56,7 +56,7 @@
               "left": "125",
               "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
               "uuid": "14f853bf-2831-47ee-a9c3-d3a5b1725913",
-              "id": 12107
+              "id": 14562
             },
             {
               "@type": "WorkflowStep",
@@ -84,7 +84,7 @@
               "left": "125",
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
               "uuid": "1595096b-e625-4c2b-ac60-7d1633970fa7",
-              "id": 12108
+              "id": 14563
             }
           ],
           "routes": [
@@ -104,11 +104,11 @@
             "Microsoft",
             "azure-kubernetes-services"
           ],
-          "id": 4083,
+          "id": 5018,
           "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
-          "createDate": 1632729318,
+          "createDate": 1634109491,
           "modifyUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
-          "modifyDate": 1632729318,
+          "modifyDate": 1634109491,
           "owners": [],
           "isPrivate": false
         },
@@ -154,7 +154,7 @@
               "left": "125",
               "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
               "uuid": "9400e601-4827-4a85-b139-b63dac198b6e",
-              "id": 12109
+              "id": 14564
             },
             {
               "@type": "WorkflowStep",
@@ -182,7 +182,7 @@
               "left": "125",
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
               "uuid": "c256902c-2b39-478f-a596-3090b767d9c3",
-              "id": 12110
+              "id": 14565
             }
           ],
           "routes": [
@@ -202,11 +202,11 @@
             "Microsoft",
             "azure-kubernetes-services"
           ],
-          "id": 4084,
+          "id": 5019,
           "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
-          "createDate": 1632729318,
+          "createDate": 1634109491,
           "modifyUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
-          "modifyDate": 1632729318,
+          "modifyDate": 1634109491,
           "owners": [],
           "isPrivate": false
         },
@@ -251,7 +251,7 @@
               "left": "125",
               "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
               "uuid": "b74ff663-2516-4dd4-b662-7e8cd9735eb5",
-              "id": 12111
+              "id": 14566
             },
             {
               "@type": "WorkflowStep",
@@ -279,7 +279,7 @@
               "left": "125",
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
               "uuid": "ed47e0a3-a9ac-461d-8f48-92960544c088",
-              "id": 12112
+              "id": 14567
             }
           ],
           "routes": [
@@ -299,11 +299,11 @@
             "Microsoft",
             "azure-kubernetes-services"
           ],
-          "id": 4085,
+          "id": 5020,
           "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
-          "createDate": 1632729318,
+          "createDate": 1634109491,
           "modifyUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
-          "modifyDate": 1632729318,
+          "modifyDate": 1634109491,
           "owners": [],
           "isPrivate": false
         },
@@ -350,7 +350,7 @@
               "left": "125",
               "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
               "uuid": "40692829-f579-49bc-873c-7eb1fc589973",
-              "id": 12113
+              "id": 14568
             },
             {
               "@type": "WorkflowStep",
@@ -378,7 +378,7 @@
               "left": "125",
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
               "uuid": "6ed6928c-a416-4bdd-b301-96a81f5d0be5",
-              "id": 12114
+              "id": 14569
             }
           ],
           "routes": [
@@ -398,11 +398,11 @@
             "Microsoft",
             "azure-kubernetes-services"
           ],
-          "id": 4086,
+          "id": 5021,
           "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
-          "createDate": 1632729318,
+          "createDate": 1634109491,
           "modifyUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
-          "modifyDate": 1632729318,
+          "modifyDate": 1634109491,
           "owners": [],
           "isPrivate": false
         },
@@ -449,7 +449,7 @@
               "left": "125",
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
               "uuid": "0ba01f9a-f16a-486c-85b8-00b5e70eddaa",
-              "id": 12115
+              "id": 14570
             },
             {
               "@type": "WorkflowStep",
@@ -476,7 +476,7 @@
               "left": "125",
               "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
               "uuid": "388fe85e-848d-4fe7-8a47-db1cdf6d1a14",
-              "id": 12116
+              "id": 14571
             }
           ],
           "routes": [
@@ -496,11 +496,11 @@
             "Microsoft",
             "azure-kubernetes-services"
           ],
-          "id": 4087,
+          "id": 5022,
           "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
-          "createDate": 1632729318,
+          "createDate": 1634109491,
           "modifyUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
-          "modifyDate": 1632729318,
+          "modifyDate": 1634109491,
           "owners": [],
           "isPrivate": false
         },
@@ -547,7 +547,7 @@
               "left": "125",
               "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
               "uuid": "5c1ba363-97bb-4a35-8996-c252e1d0d117",
-              "id": 12117
+              "id": 14572
             },
             {
               "@type": "WorkflowStep",
@@ -575,7 +575,7 @@
               "left": "125",
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
               "uuid": "6d1bdf67-00ba-4fdd-bddd-13442f7dde0e",
-              "id": 12118
+              "id": 14573
             }
           ],
           "routes": [
@@ -595,11 +595,11 @@
             "Microsoft",
             "azure-kubernetes-services"
           ],
-          "id": 4088,
+          "id": 5023,
           "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
-          "createDate": 1632729318,
+          "createDate": 1634109491,
           "modifyUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
-          "modifyDate": 1632729318,
+          "modifyDate": 1634109491,
           "owners": [],
           "isPrivate": false
         },
@@ -646,7 +646,7 @@
               "left": "125",
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
               "uuid": "6f0e2fe7-feab-4800-bc2d-801c8645f1df",
-              "id": 12119
+              "id": 14574
             },
             {
               "@type": "WorkflowStep",
@@ -674,7 +674,7 @@
               "left": "125",
               "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
               "uuid": "d358101c-0dc9-4d9a-9f40-8189ddebe1fc",
-              "id": 12120
+              "id": 14575
             }
           ],
           "routes": [
@@ -694,18 +694,18 @@
             "Microsoft",
             "azure-kubernetes-services"
           ],
-          "id": 4089,
+          "id": 5024,
           "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
-          "createDate": 1632729318,
+          "createDate": 1634109491,
           "modifyUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
-          "modifyDate": 1632729318,
+          "modifyDate": 1634109491,
           "owners": [],
           "isPrivate": false
         },
         {
           "@type": "Workflow",
           "triggerLimit": null,
-          "name": "List Managed Clusters",
+          "name": "Get Managed Clusters List",
           "aliasName": null,
           "tag": "#azure-kubernetes-services",
           "description": "Retrieves the list of managed clusters from Azure Kubernetes Services based on the subscription ID you have specified.",
@@ -714,7 +714,7 @@
           "remoteExecutableFlag": false,
           "parameters": [],
           "synchronous": false,
-          "lastModifyDate": 1631689574,
+          "lastModifyDate": 1634109797,
           "collection": "/api/3/workflow_collections/afe510da-bb33-44df-83a6-c5a1010d6abe",
           "versions": [],
           "triggerStep": "/api/3/workflow_steps/096341fb-a4d4-4b69-be23-5201032d7fea",
@@ -725,7 +725,7 @@
               "description": null,
               "arguments": {
                 "route": "0ca5746d-8d8a-4bc0-9d94-8ae313cb69aa",
-                "title": "Azure Kubernetes Services: List Managed Clusters",
+                "title": "Azure Kubernetes Services: Get Managed Clusters List",
                 "resources": [
                   "alerts"
                 ],
@@ -745,11 +745,11 @@
               "left": "125",
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
               "uuid": "096341fb-a4d4-4b69-be23-5201032d7fea",
-              "id": 12121
+              "id": 14576
             },
             {
               "@type": "WorkflowStep",
-              "name": "List Managed Clusters",
+              "name": "Get Managed Clusters List",
               "description": null,
               "arguments": {
                 "name": "Azure Kubernetes Services",
@@ -759,8 +759,8 @@
                 },
                 "version": "1.0.0",
                 "connector": "azure-kubernetes-services",
-                "operation": "list_managed_clusters",
-                "operationTitle": "List Managed Clusters",
+                "operation": "get_managed_clusters_list",
+                "operationTitle": "Get Managed Clusters List",
                 "pickFromTenant": false,
                 "step_variables": []
               },
@@ -769,7 +769,7 @@
               "left": "125",
               "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
               "uuid": "92afa537-fac8-46e7-b9ae-c88dbb847037",
-              "id": 12122
+              "id": 14577
             }
           ],
           "routes": [
@@ -789,11 +789,11 @@
             "Microsoft",
             "azure-kubernetes-services"
           ],
-          "id": 4090,
+          "id": 5025,
           "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
-          "createDate": 1632729318,
-          "modifyUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
-          "modifyDate": 1632729318,
+          "createDate": 1634109491,
+          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "modifyDate": 1634109796,
           "owners": [],
           "isPrivate": false
         }
